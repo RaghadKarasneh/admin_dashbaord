@@ -1,4 +1,4 @@
-import {GET_USERS,DELETE_USER} from '../types'
+import {GET_USERS} from '../types'
 
 const initialState = {
     users:[],
@@ -16,12 +16,7 @@ export default function(state = initialState, action){
             loading:false //update loading
 
         };
-        case DELETE_USER:
-        return {
-            ...state, //to have a copy from the object
-            users:action.payload, //update users[]
-            loading:false //update loading
-        }
+       
         default: return state
     }
 

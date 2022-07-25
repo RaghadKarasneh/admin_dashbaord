@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import {connect} from 'react-redux'
 import {getUsers} from './store/actions/usersAction'
+import './index.css'
 
  class Users extends Component {
     constructor(props){
@@ -24,13 +25,23 @@ import {getUsers} from './store/actions/usersAction'
 
         
         return (
-            <div>
+            <div className='container'>
+                <h1 className='text-center'>Users Information</h1>
+                <div className="row">
                 {users.map(u => 
-                     <div key={u.id} style={{display:this.state.deleteButton?'block':'none'}} id={u.id}>
-                         <h6 >{u.name}</h6> 
+                
+                     <div key={u.id} id={u.id} className='card col-lg-3'>
+                         <h4 className='text-center'>{u.name}</h4>
+                         <h6 >City: {u.address.city}</h6>
+                         <h6 >Workplace: {u.company.name}</h6>
+                         <h6 >Email: {u.email}</h6>
+                         <h6>Phone Number: {u.phone}</h6>
                          <button onClick={() => this.handleButton(u.id)} className="btn btn-danger">Delete</button> 
                      </div>
+                     
+                   
                 )}
+            </div>
             </div>
         )
     }

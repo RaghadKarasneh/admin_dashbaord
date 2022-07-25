@@ -1,9 +1,4 @@
-export const username=(username)=>{
-    return{
-        type: 'username',
-        username
-    }
-}
+
 export const email=(email)=>{
     return{
         type: 'email',
@@ -16,17 +11,7 @@ export const password=(password)=>{
         password,
     }
 }
-export const confirmPass=(confirmPass)=>{
-    return{
-        type: 'confirmPass',
-        confirmPass,
-    }
-}
-export const signup=()=>{
-return{
-    type: 'SIGNUP',
-}
-}
+
 export const emailORUsername=(emailORUsername)=>{
     return{
         type: 'emailORUsername',

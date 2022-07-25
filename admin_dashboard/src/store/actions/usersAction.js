@@ -18,21 +18,3 @@ export const getUsers = () => async dispatch => {
     }
 
 }
-
-export const deleteUser = () => {
-    return {
-        type: DELETE_USER,
-    }
-}
-export const deleteUserAction = (id) => {
-    return (dispatch) => {
-        axios.delete(`http://jsonplaceholder.typicode.com/users${id}`)
-            .then(response => {
-                console.log(response);
-                dispatch(deleteUser());
-            })
-            .catch(error => {
-                console.log(error);
-            });
-    }
-}
